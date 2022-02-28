@@ -1,0 +1,359 @@
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/FuturaDemiCRegular.otf");
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    background-color: #acacac;
+    place-items: center;
+    color: #222222;
+}
+
+/* Обёртки */
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form{
+  width: 1024px;
+}
+
+/* Переменные */
+
+:root {
+  --backgroundColor:  #F8F8F8;
+  --blueColor:  #0F74D1;
+  --headerHeight:  38px;
+  --borderRadiusForms:  6px;
+  --borderRadiusInputs:  3px;
+  --columnGap: 77px;  
+}
+
+/* Заголовок и футер */
+
+.form__header {
+  background-color: var(--blueColor);
+  height: var(--headerHeight);
+}
+
+.form__header-header{
+  position: relative;
+  color: white;
+  padding: 10px 20px 0 20px;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.form__header-header-tick{
+  position: relative;
+  margin-left: 10px;
+  width: 13px;
+  height: 7px;
+  background-image: url("tickcheader.png");
+  background-size: 13px 7px;
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.form__footer {
+  position: relative;
+  grid-row-start: 5;
+  grid-column-start: 1;
+  grid-row-end: 6;
+  grid-column-end: 5;
+  color: var(--blueColor);
+  background-color: var(--backgroundColor);
+  height: 45px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 20px 0 0px;
+}
+
+/* Средние блоки */
+
+.form__main {
+  opacity: 1;
+  transition: 0.2s opacity;
+  display: grid; 
+  grid-template-rows: minmax(40px, auto) auto auto;
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: var(--columnGap);
+  background-color: var(--backgroundColor);
+  margin-left:auto;
+  margin-right:auto;
+  padding: 14px 20px 0 20px;
+  color: #222222;
+}
+
+.form__secondary {
+  opacity:1;
+  transition: 0.1s opacity, height 0.3s ease-in;
+  display: grid; 
+  grid-template-rows: minmax(58px, auto) auto; 
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: var(--columnGap);
+  background-color: var(--backgroundColor); 
+  grid-column-start: 1;
+  grid-column-end: 5;
+  color: #222222;
+}
+
+.form__cell{
+   min-height: 40px;
+}
+
+/* Скрытие блоков */
+
+.fadeForm {
+  overflow: hidden;
+  height: 0px;
+  opacity: 0;
+  transition:0.2s opacity;
+}
+
+/* Радиусы по углам */
+
+.fullRadius
+{
+    border-radius: var(--borderRadiusForms);
+}
+
+.topRadius
+{
+  border-top-left-radius: var(--borderRadiusForms); 
+  border-top-right-radius: var(--borderRadiusForms);
+}
+
+.footerRadius
+{
+  border-bottom-left-radius: var(--borderRadiusForms);
+  border-bottom-right-radius: var(--borderRadiusForms);
+}
+
+
+/* Чекбоксы */
+
+.multiselect {
+  width: 100%;
+}
+
+.multiselect__selectbox {
+  position: relative;
+}
+
+.multiselect__selectbox select {
+  display: inline-block;
+  font-weight: bold;
+  background-color: var(--backgroundColor);
+  appearance: none;
+  display: grid;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal; 
+}
+
+.checkClose{
+  display: none;
+  background-image: url("crossclose.png");
+  position: absolute;
+  right: 0px;
+  top: 30%;
+  width: 6px;
+  height: 6px;
+  background-size: 6px 6px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:not([multiple]) {
+  padding-right: 1.2em;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.1em) 0.35em;
+  background-size: 0.85em auto;
+  background-image: url("tickcheck.png");
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.multiselect__checkboxes {
+  display: none;
+  border: 1px #1fc41f solid;
+  max-height: 150px;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-color: white;
+  border-radius: var(--borderRadiusInputs);
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  z-index: 4;
+  width: 190px;
+  position: absolute;
+}
+
+select, option{
+  color: #222; 
+}
+
+
+
+.multiselect__checkboxes label {
+  display: block;
+  padding: 4px 10px 0 5px;
+  position: relative;
+}
+
+ .multiselect__checkboxes label:last-child{
+  padding-bottom: 25px;
+ }
+
+.multiselect__checkboxes span{
+  margin: -16px 9px 0 15px;
+  position: relative;
+  display: block;
+}
+
+.multiselect__checkboxes input[type="button"] {
+  width: 102%;
+  height: 24px;
+  font-weight: bold;
+  background-color: #0d74d1;
+  position: sticky;
+  bottom: 0;
+}
+
+
+input[type="checkbox"] {
+  margin: 3px 3px 3px 0px;
+  display: inline-block;
+  position: relative;
+  background-color: #fff;
+}
+
+
+
+/*
+.multiselect__checkboxes::-webkit-scrollbar {
+  width: 12px;
+}
+
+.multiselect__checkboxes::-webkit-scrollbar-track {
+  background: #fff;
+  border: 1px solid #EDEDED;
+  border-radius: var(--borderRadiusInputs);
+  margin-bottom: 25px;
+}
+.multiselect__checkboxes::-webkit-scrollbar-track-piece {
+  margin-bottom: 25px;
+  height: 125px;
+}
+.multiselect__checkboxes::-webkit-scrollbar-corner {
+  margin-bottom: 25px;
+}
+.multiselect__checkboxes::-webkit-scrollbar-thumb {
+  background-color: #B2B2B2;
+  border-radius: var(--borderRadiusInputs);
+}
+
+.multiselect__checkboxes::-webkit-scrollbar-button {
+  width: 50px; //for horizontal scrollbar
+  height: 50px; //for vertical scrollbar
+}
+*/
+
+@media (max-width: 1200px){
+    .wrapper {
+       max-width: 500px;
+    }
+
+    .form__main {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(40px, auto) minmax(40px, auto) auto auto;
+      grid-column-gap: var(--columnGap);
+      grid-auto-flow: row; 
+    }
+
+    .form__secondary {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(40px, auto) minmax(40px, auto) minmax(98px, auto) auto;  
+      grid-column-gap: var(--columnGap);
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .form__footer {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+
+
+@media (max-width: 600px){
+    .wrapper {
+       max-width: 220px;
+    }
+
+    .form__main {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-column-gap: var(--columnGap);
+      grid-auto-flow: row; 
+    }
+
+    .form__header-header{
+      font-size: 12px;
+      line-height: 18px;.
+    }
+
+    .form__secondary {
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(40px, auto);  
+      grid-column-gap: var(--columnGap);
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .form__footer {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 6;
+      grid-row-end: 7;
+      font-size: 12px;
+      padding: 5px 20px 0 0px;
+    }
+
+    .multiselect__checkboxes {
+      width: 180px;
+    }
+}
+
+
+@-moz-document url-prefix()
+{
+  select:not([multiple]){
+    margin: -4px;
+  }
+}

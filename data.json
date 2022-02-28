@@ -1,0 +1,78 @@
+[
+  {
+    "typeContentId": 1,
+    "id": 1,
+    "header": "Акция",
+    "checkboxes": {
+    	"1": "Есть акция",
+    	"2": "Нет акции"
+    }
+  },
+
+  {
+    "typeContentId": 1,
+    "id": 2,
+    "header": "Диаметр",
+    "checkboxes": {
+    	"1": "Крупный",
+    	"2": "Средний",
+    	"3": "Большой"
+    }
+  },
+
+  {
+    "typeContentId": 1,
+    "id": 3,
+    "header": "Объем, л",
+    "checkboxes": {
+    	"1": "2",
+    	"2": "3",
+    	"3": "5",
+    	"4": "8"
+    }
+  },
+
+  {
+    "typeContentId": 1,
+    "id": 4,
+    "header": "Рабочая температура, °C",
+    "checkboxes": {
+    	"1": "30-50",
+    	"2": "50-70",
+    	"3": "70-100"
+    }
+  },
+
+  {
+    "typeContentId": 2,
+    "id": 5,
+    "header": "Длина, мм",
+    "min":  0,
+    "max":  120000
+  },
+
+  {
+    "typeContentId": 2,
+    "id": 6,
+    "header": "Ширина, мм",
+    "min":  0,
+    "max":  100000
+  },
+
+  {
+    "typeContentId": 2,
+    "id": 7,
+    "header": "Высота, мм",
+    "min":  0,
+    "max":  350000
+  },
+
+  {
+    "typeContentId": 2,
+    "id": 8,
+    "header": "Глубина, мм",
+    "min":  0,
+    "max":  150000
+  }
+]
+
