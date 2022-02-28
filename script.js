@@ -162,8 +162,8 @@ function rangeFormLoader(id, slideId)
     let sl1Form = '<input type="range" min="' + jsonData[id].min + '" max="' + jsonData[id].max + '" value="0" id="slider-' + `${slideId*2+1}` + '">';
     let sl2Form = '<input type="range" min="' + jsonData[id].min + '" max="' + jsonData[id].max + '" value="' + jsonData[id].max + '" id="slider-' + `${slideId*2+2}` + '">';
     let rValForm = '</div><div class="load__range_values">';
-    let inpText1Form = '<input type="text"><label class="beforeInpFrom"></label>';
-    let inpText2Form = '<label class="beforeInpTo"></label><input type="text">';
+    let inpText1Form = '<input type="text" readonly><label class="beforeInpFrom"></label>';
+    let inpText2Form = '<label class="beforeInpTo"></label><input type="text" readonly>';
     let fForm = '</div></div>';
     let sliderToHtml = upForm + hForm + contForm + trackForm + sl1Form + sl2Form + rValForm + inpText1Form + inpText2Form + fForm;
     document.querySelector('.form__secondary').insertAdjacentHTML("beforeend", sliderToHtml);

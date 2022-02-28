@@ -201,7 +201,7 @@ select:not([multiple]) {
   display: none;
   border: 1px #1fc41f solid;
   max-height: 150px;
-  overflow: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   background-color: white;
   border-radius: var(--borderRadiusInputs);
@@ -233,6 +233,7 @@ select, option{
   margin: -16px 9px 0 15px;
   position: relative;
   display: block;
+  font-size: 12px;
 }
 
 .multiselect__checkboxes input[type="button"] {
@@ -244,7 +245,6 @@ select, option{
   bottom: 0;
 }
 
-
 input[type="checkbox"] {
   margin: 3px 3px 3px 0px;
   display: inline-block;
@@ -252,9 +252,6 @@ input[type="checkbox"] {
   background-color: #fff;
 }
 
-
-
-/*
 .multiselect__checkboxes::-webkit-scrollbar {
   width: 12px;
 }
@@ -263,24 +260,12 @@ input[type="checkbox"] {
   background: #fff;
   border: 1px solid #EDEDED;
   border-radius: var(--borderRadiusInputs);
-  margin-bottom: 25px;
-}
-.multiselect__checkboxes::-webkit-scrollbar-track-piece {
-  margin-bottom: 25px;
-  height: 125px;
-}
-.multiselect__checkboxes::-webkit-scrollbar-corner {
-  margin-bottom: 25px;
 }
 .multiselect__checkboxes::-webkit-scrollbar-thumb {
   background-color: #B2B2B2;
   border-radius: var(--borderRadiusInputs);
 }
 
-.multiselect__checkboxes::-webkit-scrollbar-button {
-  width: 50px; //for horizontal scrollbar
-  height: 50px; //for vertical scrollbar
-}
 */
 
 @media (max-width: 1200px){
